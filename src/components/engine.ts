@@ -22,6 +22,19 @@ export default function Engine(): Engine {
     return state.get<GameState>("game");
   }
 
+  function getScore(): number {
+    return getGameState().score;
+  }
+
+  function addScore(score: number): void {
+    const currentState = getGameState();
+
+    state.set<GameState>("game", {
+      ...currentState,
+      score: currentState.score + score,
+    });
+  }
+
   function directionToGridFunc(direction: DIRECTION): string {
     const dir = {
       up: "getAbove",
@@ -90,7 +103,6 @@ export default function Engine(): Engine {
     if (gameOver) return;
 
     clearCanvas();
-    // drawLayout();
     drawSnake();
     drawFood();
   }
@@ -109,10 +121,11 @@ export default function Engine(): Engine {
 
       if (snake.parts.indexOf(nextIndex) !== -1) {
         gameOver = true;
-        return alert("Você perdeu");
+        return alert("Game Over! >:D\nFinal Score: " + getScore());
       } else if (nextIndex === food.currentIndex) {
         food.changeIndex();
         snake.eat(food.currentIndex);
+        addScore(50);
       }
 
       snake.move(nextIndex);
@@ -121,24 +134,6 @@ export default function Engine(): Engine {
     }
 
     moveLoop();
-  }
-
-  function drawLayout(): void {
-    const { canvas } = state.get<GlobalState>("global");
-    const { grid } = state.get<ViewState>("view");
-    const { pixelSize } = grid;
-
-    const ctx = canvas.getContext();
-
-    ctx.beginPath();
-
-    for (let i = 0; i < grid.getLastIndex(); i++) {
-      const { x, y } = grid.getPointByIndex(i);
-      ctx.strokeStyle = "white";
-      ctx.rect(x, y, pixelSize, pixelSize);
-    }
-
-    ctx.stroke();
   }
 
   function drawSnake(): void {
@@ -166,7 +161,7 @@ export default function Engine(): Engine {
     for (const part of parts) {
       const { x: containerX, y: containerY } = grid.getPointByIndex(part);
 
-      ctx.fillStyle = "gold";
+      ctx.fillStyle = "#2F352E";
 
       const x = containerX + alignedX;
       const y = containerY + alignedY;
@@ -201,14 +196,15 @@ export default function Engine(): Engine {
 
     const { x: containerX, y: containerY } = grid.getPointByIndex(currentIndex);
 
-    ctx.fillStyle = "blue";
+    ctx.strokeStyle = "#2F352E";
+    ctx.lineWidth = 5;
 
     const x = containerX + alignedX;
     const y = containerY + alignedY;
 
     ctx.rect(x, y, foodSize, foodSize);
 
-    ctx.fill();
+    ctx.stroke();
   }
 
   function clearCanvas() {

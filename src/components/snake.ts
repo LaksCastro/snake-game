@@ -18,7 +18,8 @@ export default function Snake(): Snake {
 
   function move(newIndex): void {
     for (let i = parts.length - 1; i >= 0; i--) {
-      parts[i] = parts[i - 1] || newIndex;
+      const prevPart = parts[i - 1];
+      parts[i] = prevPart === undefined ? newIndex : prevPart;
     }
   }
 

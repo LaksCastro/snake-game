@@ -55,7 +55,7 @@ export default function Grid(gridParams: {
   }
 
   function getLastIndex(): number {
-    return columns * rows;
+    return columns * rows - 1;
   }
 
   function getNext(index: number): number {

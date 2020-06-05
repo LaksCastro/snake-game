@@ -20,7 +20,7 @@ export default function Constants(): Constants {
 
     const percentToPixels = utils.interpolate([0, 100], [0, pixelSize]);
 
-    gameConstants["SNAKE_SIZE"] = percentToPixels(80);
+    gameConstants["SNAKE_SIZE"] = percentToPixels(100);
 
     gameConstants["FOOD_SIZE"] = percentToPixels(50);
 

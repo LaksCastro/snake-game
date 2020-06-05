@@ -21,11 +21,11 @@ export default function Keyboard(): Keyboard {
     ArrowRight: "right",
   };
 
-  function codeToEnum(code) {
+  function codeToEnum(code: string): DIRECTION {
     return codes[code];
   }
 
-  function once(listener: Listener) {
+  function once(listener: Listener): void {
     window.addEventListener("keydown", function onlyOnceTime(e) {
       if (events[e.code] === undefined) return;
 

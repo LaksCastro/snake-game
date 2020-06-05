@@ -16,6 +16,15 @@ export type GameState = {
   score: number;
   snake: Snake;
   food: Food;
+  scoreAnimation: {
+    visible: boolean;
+    value: number;
+    state: {
+      index: number;
+      opacity: number;
+      translateY: number;
+    }[];
+  };
 };
 
 export type ViewState = {
@@ -46,6 +55,11 @@ let state: StateObject = {
     score: 0,
     snake: null,
     food: null,
+    scoreAnimation: {
+      visible: false,
+      value: null,
+      state: [],
+    },
   },
   view: {
     grid: null,

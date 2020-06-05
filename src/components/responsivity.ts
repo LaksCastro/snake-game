@@ -2,7 +2,6 @@ import Grid from "./grid";
 import Alignment from "./alignment";
 import Dimensions from "./dimensions";
 import State, { ViewState } from "./state";
-
 import { DimensionSize } from "./dimensions";
 
 const BREAKPOINTS = {
@@ -34,7 +33,7 @@ export default function Responsivity(): Responsivity {
     };
   }
 
-  function getBreakpointsArray() {
+  function getBreakpointsArray(): number[] {
     return Object.keys(BREAKPOINTS)
       .map((breakpoint) => Number(breakpoint))
       .reverse();
