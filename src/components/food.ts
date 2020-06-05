@@ -19,17 +19,23 @@ export default function Food() {
     const { grid } = state.get<ViewState>("view");
 
     lastIndex = grid.getLastIndex();
-    const centerIndex = grid.getCenterIndex();
+
+    const {
+      snake: { parts: snakeParts },
+    } = state.get<GameState>("game");
 
     currentIndex = utils.randomInt({
       min: 0,
       max: lastIndex,
-      exclude: [centerIndex],
+      exclude: snakeParts,
     });
 
     const currentState = state.get<GameState>("game");
 
-    state.set<GameState>("game", { ...currentState, food: this });
+    state.set<GameState>("game", {
+      ...currentState,
+      food: { ...this, currentIndex },
+    });
   }
 
   function changeIndex() {

@@ -2,6 +2,7 @@ import { Grid } from "./grid";
 import { Canvas } from "./canvas";
 import { Snake } from "./snake";
 import { Food } from "./food";
+import { DIRECTION } from "./keyboard";
 
 type AvailableStates = "game" | "view" | "global";
 
@@ -9,8 +10,9 @@ export type GameState = {
   constants: {
     SNAKE_SIZE: number;
     FOOD_SIZE: number;
+    SNAKE_VELOCITY: number;
   };
-  direction: string;
+  direction: DIRECTION;
   score: number;
   snake: Snake;
   food: Food;
@@ -38,6 +40,7 @@ let state: StateObject = {
     constants: {
       SNAKE_SIZE: null,
       FOOD_SIZE: null,
+      SNAKE_VELOCITY: null,
     },
     direction: null,
     score: 0,

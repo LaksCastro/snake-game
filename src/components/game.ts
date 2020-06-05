@@ -2,6 +2,8 @@ import State, { GlobalState, ViewState, GameState } from "./state";
 import Responsivity from "./responsivity";
 import Canvas from "./canvas";
 import Constants from "./constants";
+import Snake from "./snake";
+import Food from "./food";
 import Engine from "./engine";
 
 export type Game = {
@@ -17,12 +19,16 @@ export default function Game(id: string): Game {
   const responsivity = Responsivity();
   const canvas = Canvas();
   const constants = Constants();
+  const snake = Snake();
+  const food = Food();
   const engine = Engine();
 
   function preLoad(): void {
     responsivity.configure();
     canvas.configure();
     constants.configure();
+    snake.configure();
+    food.configure();
     engine.configure();
   }
 

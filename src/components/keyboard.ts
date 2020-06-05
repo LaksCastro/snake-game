@@ -1,6 +1,6 @@
-type Listener = () => any;
+type Listener = (direction: DIRECTION) => any;
 
-type DIRECTION = "up" | "down" | "left" | "right";
+export type DIRECTION = "up" | "down" | "left" | "right";
 
 export type Keyboard = {
   once: (listener: Listener) => void;
@@ -14,30 +14,41 @@ export type Keyboard = {
 export default function Keyboard(): Keyboard {
   const events = {};
 
+  const codes = {
+    ArrowUp: "up",
+    ArrowDown: "down",
+    ArrowLeft: "left",
+    ArrowRight: "right",
+  };
+
+  function codeToEnum(code) {
+    return codes[code];
+  }
+
   function once(listener: Listener) {
     window.addEventListener("keydown", function onlyOnceTime(e) {
       if (events[e.code] === undefined) return;
 
-      listener();
+      listener(codeToEnum(e.code));
 
       window.removeEventListener("keydown", onlyOnceTime);
     });
   }
 
   function onDown(listener: Listener): void {
-    events["ArrowDown"] = listener;
+    events["ArrowDown"] = () => listener("down");
   }
 
   function onUp(listener: Listener): void {
-    events["ArrowUp"] = listener;
+    events["ArrowUp"] = () => listener("up");
   }
 
   function onLeft(listener: Listener): void {
-    events["ArrowLeft"] = listener;
+    events["ArrowLeft"] = () => listener("left");
   }
 
   function onRight(listener: Listener): void {
-    events["ArrowRight"] = listener;
+    events["ArrowRight"] = () => listener("right");
   }
 
   function listen() {
