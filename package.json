@@ -1,25 +1,25 @@
 {
-  "name": "vanilla-parcel-boilerplate",
+  "name": "snake-game",
   "version": "1.0.0",
-  "description": "Simple workflow starter for building vanilla JS apps",
+  "description": "A implementation of classic Snake Game with HTML5 Canvas Engine. Written in Typescript: available in https://lakscastro.github.io/snake-game/",
   "main": "index.js",
   "scripts": {
     "dev": "parcel public/index.html --out-dir development -p 3000",
-    "build": "parcel build public/index.html --out-dir dist --public-url ./"
+    "build": "parcel build public/index.html --out-dir docs --public-url /snake-game"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bradtraversy/vanilla-parcel-boilerplate.git"
+    "url": "https://github.com/LaksCastro/snake-game.git"
   },
   "keywords": [
     "parcel"
   ],
-  "author": "Brad Traversy",
+  "author": "Laks Castro",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bradtraversy/vanilla-parcel-boilerplate/issues"
+    "url": "https://github.com/LaksCastro/snake-game/issues"
   },
-  "homepage": "https://github.com/bradtraversy/vanilla-parcel-boilerplate#readme",
+  "homepage": "https://lakscastro.github.com/snake-game",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-transform-runtime": "^7.9.0",
@@ -29,7 +29,6 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "axios": "^0.19.2",
     "hammerjs": "^2.0.8"
   }
 }
