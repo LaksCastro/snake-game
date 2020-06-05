@@ -3,6 +3,7 @@ import State, { GlobalState, ViewState, GameState } from "./state";
 import Frames from "./frames";
 import Alignment from "./alignment";
 import Dimensions from "./dimensions";
+import Game from "./game";
 
 export type Engine = {
   configure: () => void;
@@ -16,7 +17,16 @@ export default function Engine(): Engine {
   const alignment = Alignment();
   const dimensions = Dimensions();
 
-  let gameOver = false;
+  function gameOver(): void {
+    alert("Game Over!!! >:D\nTotal Score: " + getScore());
+    frames.reset();
+    state.reset();
+    keyboard.reset();
+
+    const game = Game("canvas");
+    game.preLoad();
+    game.start();
+  }
 
   function getGameState(): GameState {
     return state.get<GameState>("game");
@@ -100,9 +110,8 @@ export default function Engine(): Engine {
   }
 
   function renderFrame(): void {
-    if (gameOver) return;
-
     clearCanvas();
+    drawLayout();
     drawSnake();
     drawFood();
   }
@@ -120,8 +129,7 @@ export default function Engine(): Engine {
       const nextIndex = grid[funcName](snake.parts[0]);
 
       if (snake.parts.indexOf(nextIndex) !== -1) {
-        gameOver = true;
-        return alert("Game Over! >:D\nFinal Score: " + getScore());
+        return gameOver();
       } else if (nextIndex === food.currentIndex) {
         food.changeIndex();
         snake.eat(food.currentIndex);
@@ -130,10 +138,31 @@ export default function Engine(): Engine {
 
       snake.move(nextIndex);
 
-      setTimeout(moveLoop, velocity / 5);
+      setTimeout(moveLoop, velocity / 7);
     }
 
     moveLoop();
+  }
+
+  function drawLayout(): void {
+    const { canvas } = state.get<GlobalState>("global");
+    const { grid } = state.get<ViewState>("view");
+    const { pixelSize } = grid;
+
+    const ctx = canvas.getContext();
+
+    ctx.beginPath();
+
+    ctx.lineWidth = 3;
+
+    for (let i = 0; i < grid.getLastIndex(); i++) {
+      const { x, y } = grid.getPointByIndex(i);
+      ctx.strokeStyle = "rgba(0, 0, 0, 0.0125)";
+
+      ctx.rect(x, y, pixelSize, pixelSize);
+    }
+
+    ctx.stroke();
   }
 
   function drawSnake(): void {
@@ -197,7 +226,7 @@ export default function Engine(): Engine {
     const { x: containerX, y: containerY } = grid.getPointByIndex(currentIndex);
 
     ctx.strokeStyle = "#2F352E";
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 3;
 
     const x = containerX + alignedX;
     const y = containerY + alignedY;

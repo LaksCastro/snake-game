@@ -1,6 +1,15 @@
-export default function Frames(render: () => any) {
+export type Frames = {
+  initialize: () => void;
+  reset: () => void;
+};
+
+export default function Frames(render: () => any): Frames {
+  let gameOver = false;
+
   function initialize() {
     function renderFrame() {
+      if (gameOver) return;
+
       render();
       initialize();
     }
@@ -8,8 +17,13 @@ export default function Frames(render: () => any) {
     window.requestAnimationFrame(renderFrame);
   }
 
-  const self = {
+  function reset() {
+    gameOver = true;
+  }
+
+  const self: Frames = {
     initialize,
+    reset,
   };
 
   return Object.freeze(self);

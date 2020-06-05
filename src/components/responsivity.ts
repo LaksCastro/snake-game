@@ -5,14 +5,14 @@ import State, { ViewState } from "./state";
 import { DimensionSize } from "./dimensions";
 
 const BREAKPOINTS = {
-  "2158": 40,
-  "1984": 35,
-  "1642": 30,
-  "1200": 25,
-  "861": 20,
-  "551": 15,
-  "320": 10,
-  "0": 8,
+  "2158": 50,
+  "1984": 45,
+  "1642": 40,
+  "1200": 35,
+  "861": 30,
+  "551": 25,
+  "320": 20,
+  "0": 18,
 };
 
 export type Responsivity = {

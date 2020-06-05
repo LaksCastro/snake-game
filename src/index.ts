@@ -1,6 +1,6 @@
 import Game from "./components/game";
 
-window.onload = function () {
+window.onload = function initializeGame() {
   try {
     // ====================================================================
     // Create a new game using using a canvas ID as a base
@@ -18,5 +18,6 @@ window.onload = function () {
     game.start();
   } catch (error) {
     console.log(error);
+    if (error.message === "Game Over...") initializeGame();
   }
 };

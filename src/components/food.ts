@@ -7,7 +7,7 @@ export type Food = {
   currentIndex: number;
 };
 
-export default function Food() {
+export default function Food(): Food {
   const state = State();
   const utils = Utils();
 

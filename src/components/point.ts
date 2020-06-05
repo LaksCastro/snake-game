@@ -7,7 +7,7 @@ export type Point = {
   create: (x: number, y: number) => PointObject;
 };
 
-export default function Point() {
+export default function Point(): Point {
   function create(x: number, y: number): PointObject {
     return {
       x,

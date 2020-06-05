@@ -16,15 +16,6 @@ export type GameState = {
   score: number;
   snake: Snake;
   food: Food;
-  scoreAnimation: {
-    visible: boolean;
-    value: number;
-    state: {
-      index: number;
-      opacity: number;
-      translateY: number;
-    }[];
-  };
 };
 
 export type ViewState = {
@@ -55,11 +46,6 @@ let state: StateObject = {
     score: 0,
     snake: null,
     food: null,
-    scoreAnimation: {
-      visible: false,
-      value: null,
-      state: [],
-    },
   },
   view: {
     grid: null,
@@ -73,9 +59,10 @@ let state: StateObject = {
 export type State = {
   get: <T>(type: AvailableStates) => T;
   set: <T>(type: AvailableStates, newState: T) => void;
+  reset: () => void;
 };
 
-export default function State() {
+export default function State(): State {
   function getTargetState(type: AvailableStates): AnyState {
     return state[type] as AnyState;
   }
@@ -90,9 +77,33 @@ export default function State() {
     ((state[type] as unknown) as T) = newState;
   }
 
+  function reset(): void {
+    state = {
+      game: {
+        constants: {
+          SNAKE_SIZE: null,
+          FOOD_SIZE: null,
+          SNAKE_VELOCITY: null,
+        },
+        direction: null,
+        score: 0,
+        snake: null,
+        food: null,
+      },
+      view: {
+        grid: null,
+      },
+      global: {
+        id: null,
+        canvas: null,
+      },
+    };
+  }
+
   const self: State = {
     get,
     set,
+    reset,
   };
 
   return Object.freeze(self);
