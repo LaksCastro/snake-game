@@ -11,7 +11,7 @@ export type Canvas = {
 export default function Canvas(): Canvas {
   const state = State();
 
-  const id = state.get<GlobalState>("global").id;
+  const { id } = state.get<GlobalState>("global");
 
   function getElement(): HTMLCanvasElement {
     const element = document.getElementById(id) as HTMLCanvasElement;
