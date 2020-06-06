@@ -25,8 +25,8 @@
 </p>
 
 <p>
-  <img src="./docs/pt-br.png" alt="Portuguese" height="16">
-  <a href="https://github.com/LaksCastro/lofi-player/blob/master/README-ptbr.md">Ler em português</a>
+  <img src="./src/assets/pt-br.png" alt="Portuguese" height="16">
+  <a href="https://github.com/LaksCastro/snake-game/blob/master/README-ptbr.md">Ler em português</a>
 </p>
 
 # Live On
