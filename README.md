@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <img src="./src/assets/snake-game.gif" width="350">
+  <img src="./src/assets/snake-game-printscreen.png" width="350">
 </p>
 
 <p>
