@@ -3,7 +3,7 @@
 </p>
 <p align="center">⭐⭐⭐⭐⭐</p>
 <h1 align="center">Web Snake Game - Fluid and Responsive</h1>
-<h4 align="center"><a href="https://lakscastro.github.io/snake-game"><code>Play in Browser</code></a></h4>
+<h4 align="center"><a href="https://lakscastro.github.io/snake-game"><code>Jogue no navegador</code></a></h4>
 <p align="center">A implementation of classic Snake Game with HTML5 Canvas Engine. Written in Typescript</p>
 <p align="center">
   <img  src="https://img.shields.io/badge/category-gamedev-orange" alt="Application Category" />
@@ -31,50 +31,50 @@
 
 # Play in Browser
 
-[Clicking here](https://lakscastro.github.io/snake-game/) you can play, enjoy :D
+[Clicando aqui](https://lakscastro.github.io/snake-game/) você pode jogar, divirta-se :D
 
-# What is it?
-Its a implementation of classic Snake Game with HTML5 Canvas and Typescript. Differentials: is responsive, therefore is possible to open in mobile device or a desktop for same experience. In mobile, the Snake commands are handled with swipe gestures, enjoy
+# O que é este repositório?
+É uma implementação do clássico jogo Snake com HTML5 Canvas e Typescript. Diferenciais: é responsivo; portanto, é possível abrir no dispositivo móvel ou em um desktop para a mesma experiência. No celular, os comandos Snake são manipulados com gestos de swipe, deslizar, aproveite
 
-# How to clone project
+# Como clonar este projeto?
 
-- Clone repository
+- Clone o repositório
 
 ```
 git clone https://github.com/LaksCastro/snake-game.git
 ```
 
-- Change directory
+- Mude o diretório
 
 ```
 cd snake-game
 ```
 
-- To install dependencies (2 dependencies: hammerjs to work with gestures and lodash.debounce to improve performance)
+- Instale as dependências (2 dependências: hammerjs para trabalhar com o gestos e o lodash.debounce pra melhorar o desempenho)
 ```
 yarn install
 ```
-or, for npm users:
+ou, para usuários de npm:
 ```
 npm install
 ```
 
-- To run development server
+- Inicie o servidor de desenvolvimento
 
 ```
 yarn dev
 ```
-or, for npm users:  
+ou, para usuários de npm:
 ```
 npm run dev
 ```
 
-- To create static files and deploy to github pages (gh-pages branch)
+- Gerar os arquivos estáticos e fazer deploy para o github pages (gh-pages branch)
 
 ```
 yarn build
 ```
-or, for npm users:  
+ou, para usuários de npm:
 ```
 npm run build
 ```
