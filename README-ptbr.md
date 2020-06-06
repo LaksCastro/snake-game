@@ -38,19 +38,19 @@
 
 # Como clonar este projeto?
 
-- Clone o repositório
+1. Clone o repositório
 
 ```
 git clone https://github.com/LaksCastro/snake-game.git
 ```
 
-- Mude o diretório
+2. Mude o diretório
 
 ```
 cd snake-game
 ```
 
-- Instale as dependências (2 dependências: hammerjs para trabalhar com o gestos e o lodash.debounce pra melhorar o desempenho)
+3. Instale as dependências (2 dependências: hammerjs para trabalhar com o gestos e o lodash.debounce pra melhorar o desempenho)
 ```
 yarn install
 ```
@@ -59,7 +59,7 @@ ou, para usuários de npm:
 npm install
 ```
 
-- Inicie o servidor de desenvolvimento
+4. Inicie o servidor de desenvolvimento
 
 ```
 yarn dev
@@ -69,7 +69,7 @@ ou, para usuários de npm:
 npm run dev
 ```
 
-- Gerar os arquivos estáticos e fazer deploy para o github pages (gh-pages branch)
+5. Gerar os arquivos estáticos e fazer deploy para o github pages (gh-pages branch)
 
 ```
 yarn build
