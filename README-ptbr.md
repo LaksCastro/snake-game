@@ -3,8 +3,8 @@
 </p>
 <p align="center">⭐⭐⭐⭐⭐</p>
 <h1 align="center">Web Snake Game - Fluid and Responsive</h1>
-<h4 align="center"><a href="https://lakscastro.github.io/snake-game"><code>Jogue no navegador</code></a></h4>
-<p align="center">A implementação do clássico jogo Snake com o HTML5 Canvas Engine. Escrito em Texto Dactilografado</p>
+<h4 align="center"><a href="https://lakscastro.github.io/snake-game"><code>Jogue no Browser</code></a></h4>
+<p align="center">Uma implementação do clássico jogo Snake com o HTML5 Canvas Engine. Escrito em Typescript</p>
 <p align="center">
   <img  src="https://img.shields.io/badge/category-gamedev-orange" alt="Application Category" />
   <img  src="https://img.shields.io/badge/language-typescript-blue" alt="Repo Main Language" />
