@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel public/index.html --out-dir development -p 3000",
-    "build": "parcel build public/index.html --out-dir build --public-url /snake-game",
+    "build": "parcel build public/index.html --out-dir build --public-url /snake-game && workbox generateSW",
     "deploy": "node ./publish.js"
   },
   "repository": {
