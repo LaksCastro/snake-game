@@ -4,7 +4,7 @@
 <p align="center">⭐⭐⭐⭐⭐</p>
 <h1 align="center">Web Snake Game - Fluid and Responsive</h1>
 <h4 align="center"><a href="https://lakscastro.github.io/snake-game"><code>Jogue no navegador</code></a></h4>
-<p align="center">A implementation of classic Snake Game with HTML5 Canvas Engine. Written in Typescript</p>
+<p align="center">A implementação do clássico jogo Snake com o HTML5 Canvas Engine. Escrito em Texto Dactilografado</p>
 <p align="center">
   <img  src="https://img.shields.io/badge/category-gamedev-orange" alt="Application Category" />
   <img  src="https://img.shields.io/badge/language-typescript-blue" alt="Repo Main Language" />
@@ -78,3 +78,19 @@ ou, para usuários de npm:
 ```
 npm run build
 ```
+
+<br>
+<br>
+<br>
+<br>
+
+<h2 align="center">
+  Open Source
+</h2>
+<p align="center">
+  <sub>Copyright © 2020-present, Laks Castro.</sub>
+</p>
+<p align="center">Web Snake Game Code <a href="https://github.com/LaksCastro/ethereal-color/LICENSE.md">is MIT licensed 💖</a></p>
+<p align="center">
+  <img src="./src/assets/logo64.png" width="35" />
+</p>
