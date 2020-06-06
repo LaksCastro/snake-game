@@ -6,24 +6,17 @@
 <h4 align="center"><a href="https://lakscastro.github.io/snake-game"><code>Play in Browser</code></a></h4>
 <p align="center">A minimal music Lofi-Player with Youtube Data v3 API, Iframe API and a loot of JavaScript</p>
 <p align="center">
-  <img  src="https://img.shields.io/badge/application-music_player-blue" alt="Application Type" />
-  <img  src="https://img.shields.io/badge/language-javascript-yellow" alt="Repo Main Language" />
+  <img  src="https://img.shields.io/badge/category-gamedev-orange" alt="Application Category" />
+  <img  src="https://img.shields.io/badge/language-typescript-blue" alt="Repo Main Language" />
   <img  src="https://img.shields.io/badge/bundler-parcel-blueviolet" alt="Module Bundler" />
-  <img  src="https://img.shields.io/badge/api-youtube_iframe_google-success" alt="Repo API" />
+  <img  src="https://img.shields.io/badge/architecture-factory_functions" alt="Repo API" />
   <img  src="https://img.shields.io/badge/type-project-green" alt="Repo Type" />
+  <img  src="https://img.shields.io/badge/name-snake_game-success" alt="Game Ref" />
 </p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/laks-castro-9ab09a18b/" target="_blank">
     <img src="https://img.shields.io/twitter/url?label=Connect%20%40LaksCastro&logo=linkedin&url=https%3A%2F%2Fwww.twitter.com%2Flakscastro%2F" alt="Follow" />
-  </a>
-</p>
-<p align="center">
-  <a href="https://www.instagram.com/manno_eu/" target="_blank">
-    <img src="https://img.shields.io/twitter/url?label=Follow%20%40Emmanuel&logo=instagram&url=https%3A%2F%2Fwww.instagram.com%2Fmanno_eu%2F" alt="Follow" />
-  </a>
-  <a href="https://www.linkedin.com/in/emmanuel-messias-535621127/" target="_blank">
-    <img src="https://img.shields.io/twitter/url?label=Connect%20%40Emmanuel&logo=linkedin&url=https%3A%2F%2Fwww.twitter.com%2Flakscastro%2F" alt="Follow" />
   </a>
 </p>
 
