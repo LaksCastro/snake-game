@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/public/favicon.png" width="150" />
+  <img src="/src/assets/logo.svg" width="150" />
 </p>
 <p align="center">⭐⭐⭐⭐⭐</p>
 <h1 align="center">Web Snake Game - Fluid and Responsive</h1>
