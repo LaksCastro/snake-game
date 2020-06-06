@@ -34,8 +34,7 @@
 [Clicking here](https://lakscastro.github.io/snake-game/) you can play, enjoy :D
 
 # What is it?
-
-Its a implementation of classic Snake Game
+Its a implementation of classic Snake Game with HTML5 Canvas and Typescript. Differentials: is responsive, therefore is possible to open in mobile device or a desktop for same experience. In mobile, the Snake commands are handled with swipe gestures, enjoy
 
 # How to clone project
 
