@@ -29,7 +29,7 @@
   <a href="https://github.com/LaksCastro/snake-game/">Read in English</a>
 </p>
 
-# Play in Browser
+# Jogue no Browser
 
 [Clicando aqui](https://lakscastro.github.io/snake-game/) você pode jogar, divirta-se :D
 
