@@ -31,7 +31,7 @@
 
 # Live On
 
-Enjoy [clicking here](https://lakscastro.github.io/lofi-player/)
+Enjoy [clicking here](https://lakscastro.github.io/snake-game/)
 
 # What is it?
 
