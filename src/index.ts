@@ -7,5 +7,5 @@ window.addEventListener("DOMContentLoaded", function () {
   game.preLoad();
   game.start();
 
-  window.onresize = debounce(game.restart, 200);
+  window.onresize = debounce(game.restart, 200) as () => void;
 });
