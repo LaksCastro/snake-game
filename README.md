@@ -38,19 +38,19 @@ Its a implementation of classic Snake Game with HTML5 Canvas and Typescript. Dif
 
 # How to clone project
 
-- Clone repository
+1. Clone repository
 
 ```
 git clone https://github.com/LaksCastro/snake-game.git
 ```
 
-- Change directory
+2. Change directory
 
 ```
 cd snake-game
 ```
 
-- To install dependencies (2 dependencies: hammerjs to work with gestures and lodash.debounce to improve performance)
+3. To install dependencies (2 dependencies: hammerjs to work with gestures and lodash.debounce to improve performance)
 ```
 yarn install
 ```
@@ -59,7 +59,7 @@ or, for npm users:
 npm install
 ```
 
-- To run development server
+4. To run development server
 
 ```
 yarn dev
@@ -69,7 +69,7 @@ or, for npm users:
 npm run dev
 ```
 
-- To create static files and deploy to github pages (gh-pages branch)
+5. To create static files and deploy to github pages (gh-pages branch)
 
 ```
 yarn build
