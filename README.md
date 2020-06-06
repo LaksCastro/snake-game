@@ -79,3 +79,18 @@ or, for npm users:
 npm run build
 ```
 
+<br>
+<br>
+<br>
+<br>
+
+<h2 align="center">
+  Open Source
+</h2>
+<p align="center">
+  <sub>Copyright © 2020-present, Laks Castro.</sub>
+</p>
+<p align="center">Web Snake Game Code <a href="https://github.com/LaksCastro/ethereal-color/LICENSE.md">is MIT licensed 💖</a></p>
+<p align="center">
+  <img src="/src/assets/logo.png" width="35" />
+</p>
