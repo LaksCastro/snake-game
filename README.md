@@ -92,5 +92,5 @@ npm run build
 </p>
 <p align="center">Web Snake Game Code <a href="https://github.com/LaksCastro/ethereal-color/LICENSE.md">is MIT licensed 💖</a></p>
 <p align="center">
-  <img src="/src/assets/logo.png" width="35" />
+  <img src="./src/assets/logo64.png" width="35" />
 </p>
