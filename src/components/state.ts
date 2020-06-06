@@ -6,7 +6,7 @@ import { Engine } from "./engine";
 import { DIRECTION } from "./keyboard";
 import { Context } from "./context";
 
-type AvailableStates = "game" | "view" | "global";
+type StateEnum = "game" | "view" | "global";
 
 export type GameState = {
   constants: {
@@ -30,8 +30,6 @@ export type GlobalState = {
   engine: Engine;
   context: Context;
 };
-
-export type AnyState = GameState | ViewState | GlobalState;
 
 type StateObject = {
   game: GameState;
@@ -63,23 +61,23 @@ let state: StateObject = {
 };
 
 export type State = {
-  get: <T>(type: AvailableStates) => T;
-  set: <T>(type: AvailableStates, newState: T) => void;
+  get: <T>(type: StateEnum) => T;
+  set: <T>(type: StateEnum, newState: T) => void;
   reset: () => void;
 };
 
 export default function State(): State {
-  function getTargetState(type: AvailableStates): AnyState {
-    return state[type] as AnyState;
+  function getTargetState<T>(type: StateEnum): T {
+    return (state[type] as unknown) as T;
   }
 
-  function get<T>(type: AvailableStates): T {
+  function get<T>(type: StateEnum): T {
     const targetState = (getTargetState(type) as unknown) as T;
 
     return targetState;
   }
 
-  function set<T>(type: AvailableStates, newState: T): void {
+  function set<T>(type: StateEnum, newState: T): void {
     ((state[type] as unknown) as T) = newState;
   }
 

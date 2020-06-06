@@ -32,6 +32,10 @@ export default function Keyboard(): Keyboard {
     ArrowDown: "down",
     ArrowLeft: "left",
     ArrowRight: "right",
+    KeyW: "up",
+    KeyS: "down",
+    KeyA: "left",
+    KeyD: "right",
   };
 
   function codeToEnum(code: string): DIRECTION {
@@ -115,24 +119,28 @@ export default function Keyboard(): Keyboard {
     listeners["onKeyDown"] = listener;
 
     events["ArrowDown"] = onKeyDown;
+    events["KeyS"] = onKeyDown;
   }
 
   function onUp(listener: Listener): void {
     listeners["onKeyUp"] = listener;
 
     events["ArrowUp"] = onKeyUp;
+    events["KeyW"] = onKeyUp;
   }
 
   function onLeft(listener: Listener): void {
     listeners["onKeyLeft"] = listener;
 
     events["ArrowLeft"] = onKeyLeft;
+    events["KeyA"] = onKeyLeft;
   }
 
   function onRight(listener: Listener): void {
     listeners["onKeyRight"] = listener;
 
     events["ArrowRight"] = onKeyRight;
+    events["KeyD"] = onKeyRight;
   }
 
   function onKeyEvent(e: KeyboardEvent) {

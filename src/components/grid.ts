@@ -1,8 +1,8 @@
-import Point, { PointObject } from "./point";
+import { Point } from "./point";
 
 export type Grid = {
   getLastIndex: () => number;
-  getPointByIndex: (index: number) => PointObject;
+  getPointByIndex: (index: number) => Point;
   getCenterIndex: () => number;
   getAbove: (index: number) => number;
   getBelow: (index: number) => number;
@@ -15,10 +15,8 @@ export default function Grid(gridParams: {
   columns: number;
   rows: number;
   pixelSize: number;
-  startPoint: PointObject;
+  startPoint: Point;
 }): Grid {
-  const point = Point();
-
   const {
     columns,
     rows,
@@ -94,7 +92,7 @@ export default function Grid(gridParams: {
     else return probableBelowIndex;
   }
 
-  function getPointByIndex(index: number): PointObject {
+  function getPointByIndex(index: number): Point {
     validateIndex(index);
 
     const row = Math.floor(index / columns);
@@ -103,7 +101,7 @@ export default function Grid(gridParams: {
     const x = initialX + column * pixelSize;
     const y = initialY + row * pixelSize;
 
-    const targetPoint = point.create(x, y);
+    const targetPoint = { x, y };
 
     return targetPoint;
   }
