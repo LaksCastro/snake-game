@@ -39,25 +39,25 @@ Its a implementation of classic Snake Game
 
 # How to clone project
 
-> _Note, dont forget to create a .env file with your Google API Credentials
-> in [Google Developers Console](https://console.developers.google.com/apis/dashboard) and active the Youtube Data API v3 in API Libraries._
-
 - To clone this repo
 
 ```
-git clone https://github.com/LaksCastro/lofi-player.git
+git clone https://github.com/LaksCastro/snake-game.git
 ```
 
 - To change path
 
 ```
-cd lofi-player
+cd snake-game
 ```
 
 - To install dependencies
 
 ```
 yarn install
+```
+or, for npm users:
+```
 npm install
 ```
 
@@ -65,6 +65,9 @@ npm install
 
 ```
 yarn dev
+```
+or, for npm users:  
+```
 npm run dev
 ```
 
