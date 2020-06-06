@@ -3,7 +3,7 @@
 </p>
 <p align="center">⭐⭐⭐⭐⭐</p>
 <h1 align="center">Web Snake Game - Fluid and Responsive</h1>
-<h3><a href="https://lakscastro.github.io/snake-game">Play in Browser</a></h3>
+<h3 align="center"><code><a href="https://lakscastro.github.io/snake-game">Play in Browser</a></code></h3>
 <p align="center">A minimal music Lofi-Player with Youtube Data v3 API, Iframe API and a loot of JavaScript</p>
 <p align="center">
   <img  src="https://img.shields.io/badge/application-music_player-blue" alt="Application Type" />
