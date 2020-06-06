@@ -29,13 +29,13 @@
   <a href="https://github.com/LaksCastro/snake-game/blob/master/README-ptbr.md">Ler em português</a>
 </p>
 
-# Live On
+# Play in Browser
 
-Enjoy [clicking here](https://lakscastro.github.io/snake-game/)
+[Clicking here](https://lakscastro.github.io/snake-game/) you can play, enjoy :D
 
 # What is it?
 
-Its a simple and minimalist Player with Lofi music style, builded with HTML, CSS and JavaScript, using Youtube Data API v3 for fetch Playlist videos count, Youtube Iframe API to render music as background. Parcel is a choosed Module Bundler because he is very simple, perfect for this project.
+Its a implementation of classic Snake Game
 
 # How to clone project
 
