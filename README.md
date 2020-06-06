@@ -10,8 +10,8 @@
   <img  src="https://img.shields.io/badge/language-typescript-blue" alt="Repo Main Language" />
   <img  src="https://img.shields.io/badge/bundler-parcel-blueviolet" alt="Module Bundler" />
   <img  src="https://img.shields.io/badge/architecture-factory_functions-blueviolet" alt="Repo API" />
-  <img  src="https://img.shields.io/badge/type-project-green" alt="Repo Type" />
-  <img  src="https://img.shields.io/badge/name-snake_game-success" alt="Game Ref" />
+  <img  src="https://img.shields.io/badge/type-project-success" alt="Repo Type" />
+  <img  src="https://img.shields.io/badge/name-snake_game-green" alt="Game Ref" />
 </p>
 
 <p align="center">
