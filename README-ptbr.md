@@ -2,7 +2,7 @@
   <img src="/src/assets/logo.svg" width="150" />
 </p>
 <p align="center">⭐⭐⭐⭐⭐</p>
-<h1 align="center">Web Snake Game - Fluid and Responsive</h1>
+<h1 align="center">Jogo da Cobrinha - Flúido e responsivo</h1>
 <h4 align="center"><a href="https://lakscastro.github.io/snake-game"><code>Jogue no Browser</code></a></h4>
 <p align="center">Uma implementação do clássico jogo Snake com o HTML5 Canvas Engine. Escrito em Typescript</p>
 <p align="center">
