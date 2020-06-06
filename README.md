@@ -90,7 +90,7 @@ npm run build
 <p align="center">
   <sub>Copyright © 2020-present, Laks Castro.</sub>
 </p>
-<p align="center">Web Snake Game Code <a href="https://github.com/LaksCastro/ethereal-color/LICENSE.md">is MIT licensed 💖</a></p>
+<p align="center">Web Snake Game Code <a href="https://github.com/LaksCastro/snake-game/blob/master/LICENSE.md">is MIT licensed 💖</a></p>
 <p align="center">
   <img src="./src/assets/logo64.png" width="35" />
 </p>
