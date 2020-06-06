@@ -4,7 +4,7 @@
 <p align="center">⭐⭐⭐⭐⭐</p>
 <h1 align="center">Web Snake Game - Fluid and Responsive</h1>
 <h4 align="center"><a href="https://lakscastro.github.io/snake-game"><code>Play in Browser</code></a></h4>
-<p align="center">A minimal music Lofi-Player with Youtube Data v3 API, Iframe API and a loot of JavaScript</p>
+<p align="center">A implementation of classic Snake Game with HTML5 Canvas Engine. Written in Typescript</p>
 <p align="center">
   <img  src="https://img.shields.io/badge/category-gamedev-orange" alt="Application Category" />
   <img  src="https://img.shields.io/badge/language-typescript-blue" alt="Repo Main Language" />
