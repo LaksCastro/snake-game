@@ -39,20 +39,19 @@ Its a implementation of classic Snake Game
 
 # How to clone project
 
-- To clone this repo
+- Clone repository
 
 ```
 git clone https://github.com/LaksCastro/snake-game.git
 ```
 
-- To change path
+- Change directory
 
 ```
 cd snake-game
 ```
 
-- To install dependencies
-
+- To install dependencies (2 dependencies: hammerjs to work with gestures and lodash.debounce to improve performance)
 ```
 yarn install
 ```
@@ -71,16 +70,13 @@ or, for npm users:
 npm run dev
 ```
 
-- To create static files
-
-```
-yarn pre-build
-npm run pre-build
-```
-
-- To deploy to github pages
+- To create static files and deploy to github pages (gh-pages branch)
 
 ```
 yarn build
+```
+or, for npm users:  
+```
 npm run build
 ```
+
