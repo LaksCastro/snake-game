@@ -6,6 +6,7 @@ export type Canvas = {
   getContext: () => CanvasRenderingContext2D;
   getDimensions: () => DimensionSize;
   configure: () => void;
+  update: () => void;
 };
 
 export default function Canvas(): Canvas {
@@ -38,15 +39,19 @@ export default function Canvas(): Canvas {
     return data;
   }
 
-  function configure() {
-    const currentState = state.get<GlobalState>("global");
-
+  function setCanvasDimensions() {
     const canvas = getElement();
 
-    const { clientWidth: width, clientHeight: height } = canvas;
+    const { width, height } = getDimensions();
 
     canvas.width = width;
     canvas.height = height;
+  }
+
+  function configure() {
+    const currentState = state.get<GlobalState>("global");
+
+    setCanvasDimensions();
 
     state.set("global", {
       ...currentState,
@@ -54,11 +59,16 @@ export default function Canvas(): Canvas {
     });
   }
 
+  function update() {
+    setCanvasDimensions();
+  }
+
   const self: Canvas = {
     getElement,
     getContext,
     getDimensions,
     configure,
+    update,
   };
 
   return Object.freeze(self);

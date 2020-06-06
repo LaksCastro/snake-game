@@ -6,18 +6,18 @@ export type Frames = {
 export default function Frames(render: () => any): Frames {
   let gameOver = false;
 
-  function initialize() {
-    function renderFrame() {
-      if (gameOver) return;
+  function initialize(): void {
+    if (gameOver) return;
 
+    function renderFrame() {
       render();
       initialize();
     }
 
-    window.requestAnimationFrame(renderFrame);
+    window.requestAnimationFrame(() => renderFrame());
   }
 
-  function reset() {
+  function reset(): void {
     gameOver = true;
   }
 

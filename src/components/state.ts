@@ -2,7 +2,9 @@ import { Grid } from "./grid";
 import { Canvas } from "./canvas";
 import { Snake } from "./snake";
 import { Food } from "./food";
+import { Engine } from "./engine";
 import { DIRECTION } from "./keyboard";
+import { Context } from "./context";
 
 type AvailableStates = "game" | "view" | "global";
 
@@ -25,6 +27,8 @@ export type ViewState = {
 export type GlobalState = {
   id: string;
   canvas: Canvas;
+  engine: Engine;
+  context: Context;
 };
 
 export type AnyState = GameState | ViewState | GlobalState;
@@ -53,6 +57,8 @@ let state: StateObject = {
   global: {
     id: null,
     canvas: null,
+    engine: null,
+    context: null,
   },
 };
 
@@ -94,8 +100,7 @@ export default function State(): State {
         grid: null,
       },
       global: {
-        id: null,
-        canvas: null,
+        ...state.global,
       },
     };
   }

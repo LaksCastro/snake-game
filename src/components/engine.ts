@@ -3,29 +3,49 @@ import State, { GlobalState, ViewState, GameState } from "./state";
 import Frames from "./frames";
 import Alignment from "./alignment";
 import Dimensions from "./dimensions";
-import Game from "./game";
 
 export type Engine = {
   configure: () => void;
   start: () => void;
+  reset: () => void;
 };
 
 export default function Engine(): Engine {
   const keyboard = Keyboard();
   const state = State();
-  const frames = Frames(renderFrame);
+  let frames = Frames(renderFrame);
   const alignment = Alignment();
   const dimensions = Dimensions();
 
+  let loopId = null;
+  let allowPress = true;
+
   function gameOver(): void {
     alert("Game Over!!! >:D\nTotal Score: " + getScore());
+
+    reset();
+  }
+
+  function reset(): void {
+    window.clearTimeout(loopId);
     frames.reset();
     state.reset();
     keyboard.reset();
 
-    const game = Game("canvas");
-    game.preLoad();
-    game.start();
+    loopId = null;
+
+    reinit();
+  }
+
+  function reinit(): void {
+    const { context } = state.get<GlobalState>("global");
+
+    context.configure("newTry");
+
+    frames = Frames(renderFrame);
+
+    configure();
+    start();
   }
 
   function getGameState(): GameState {
@@ -75,38 +95,50 @@ export default function Engine(): Engine {
   }
 
   function onUp(): void {
-    if (!isValidDirection(getGameState().direction, "up")) return;
+    if (!isValidDirection(getGameState().direction, "up") || !allowPress)
+      return;
+
+    allowPress = false;
 
     state.set<GameState>("game", { ...getGameState(), direction: "up" });
   }
 
   function onDown(): void {
-    if (!isValidDirection(getGameState().direction, "down")) return;
+    if (!isValidDirection(getGameState().direction, "down") || !allowPress)
+      return;
+
+    allowPress = false;
 
     state.set<GameState>("game", { ...getGameState(), direction: "down" });
   }
 
   function onLeft(): void {
-    if (!isValidDirection(getGameState().direction, "left")) return;
+    if (!isValidDirection(getGameState().direction, "left") || !allowPress)
+      return;
+
+    allowPress = false;
 
     state.set<GameState>("game", { ...getGameState(), direction: "left" });
   }
 
   function onRight(): void {
-    if (!isValidDirection(getGameState().direction, "right")) return;
+    if (!isValidDirection(getGameState().direction, "right") || !allowPress)
+      return;
+
+    allowPress = false;
 
     state.set<GameState>("game", { ...getGameState(), direction: "right" });
   }
 
-  function onPlayerInit(direction): void {
+  function onPlayerInit(direction: DIRECTION): void {
     const currentState = state.get<GameState>("game");
     state.set<GameState>("game", { ...currentState, direction });
 
     keyboard.listen();
 
-    enableAutoMove();
-
     frames.initialize();
+
+    enableAutoMove();
   }
 
   function renderFrame(): void {
@@ -116,7 +148,7 @@ export default function Engine(): Engine {
     drawFood();
   }
 
-  function enableAutoMove() {
+  function enableAutoMove(): void {
     const { SNAKE_VELOCITY: velocity } = state.get<GameState>("game").constants;
 
     const { grid } = state.get<ViewState>("view");
@@ -137,8 +169,9 @@ export default function Engine(): Engine {
       }
 
       snake.move(nextIndex);
+      allowPress = true;
 
-      setTimeout(moveLoop, velocity / 7);
+      loopId = window.setTimeout(moveLoop, velocity / 7);
     }
 
     moveLoop();
@@ -201,7 +234,7 @@ export default function Engine(): Engine {
     ctx.fill();
   }
 
-  function drawFood() {
+  function drawFood(): void {
     const { canvas } = state.get<GlobalState>("global");
     const { grid } = state.get<ViewState>("view");
 
@@ -236,7 +269,7 @@ export default function Engine(): Engine {
     ctx.stroke();
   }
 
-  function clearCanvas() {
+  function clearCanvas(): void {
     const { canvas } = state.get<GlobalState>("global");
 
     const ctx = canvas.getContext();
@@ -259,6 +292,7 @@ export default function Engine(): Engine {
   const self: Engine = {
     configure,
     start,
+    reset,
   };
 
   return Object.freeze(self);

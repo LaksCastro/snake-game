@@ -25,6 +25,8 @@ export default function Keyboard(): Keyboard {
 
   let listeners = {};
 
+  let onceListener: Listener;
+
   const codes = {
     ArrowUp: "up",
     ArrowDown: "down",
@@ -47,44 +49,45 @@ export default function Keyboard(): Keyboard {
     return touchs[touch];
   }
 
+  function onlyOnceTimeWithKeys(e: KeyboardEvent) {
+    if (alreadyStarted)
+      return window.removeEventListener("keydown", onlyOnceTimeWithKeys);
+
+    if (events[e.code] === undefined) return;
+
+    alreadyStarted = true;
+
+    onceListener(codeToEnum(e.code));
+
+    window.removeEventListener("keydown", onlyOnceTimeWithKeys);
+    windowTouch.off(
+      "swipeleft swipeup swipedown swiperight",
+      onlyOnceTimeWithSwipe
+    );
+  }
+
+  function onlyOnceTimeWithSwipe(e: KeyboardEvent) {
+    if (alreadyStarted) return windowTouch.off("swipe", onlyOnceTimeWithSwipe);
+
+    const code = touchEventToCode(e.type);
+
+    if (events[code] === undefined) return;
+
+    alreadyStarted = true;
+
+    onceListener(codeToEnum(code));
+
+    window.removeEventListener("keydown", onlyOnceTimeWithKeys);
+    windowTouch.off(
+      "swipeleft swipeup swipedown swiperight",
+      onlyOnceTimeWithSwipe
+    );
+  }
+
   function once(listener: Listener): void {
-    function onlyOnceTimeWithKeys(e: KeyboardEvent) {
-      if (alreadyStarted)
-        return window.removeEventListener("keydown", onlyOnceTimeWithKeys);
-
-      if (events[e.code] === undefined) return;
-
-      alreadyStarted = true;
-
-      listener(codeToEnum(e.code));
-
-      window.removeEventListener("keydown", onlyOnceTimeWithKeys);
-      windowTouch.off(
-        "swipeleft swipeup swipedown swiperight",
-        onlyOnceTimeWithSwipe
-      );
-    }
+    onceListener = listener;
 
     window.addEventListener("keydown", onlyOnceTimeWithKeys);
-
-    function onlyOnceTimeWithSwipe(e: KeyboardEvent) {
-      if (alreadyStarted)
-        return windowTouch.off("swipe", onlyOnceTimeWithSwipe);
-
-      const code = touchEventToCode(e.type);
-
-      if (events[code] === undefined) return;
-
-      alreadyStarted = true;
-
-      listener(codeToEnum(code));
-
-      window.removeEventListener("keydown", onlyOnceTimeWithKeys);
-      windowTouch.off(
-        "swipeleft swipeup swipedown swiperight",
-        onlyOnceTimeWithSwipe
-      );
-    }
 
     windowTouch.on(
       "swipeleft swipeup swipedown swiperight",
@@ -112,28 +115,24 @@ export default function Keyboard(): Keyboard {
     listeners["onKeyDown"] = listener;
 
     events["ArrowDown"] = onKeyDown;
-    windowTouch.on("swipedown", onKeyDown);
   }
 
   function onUp(listener: Listener): void {
     listeners["onKeyUp"] = listener;
 
     events["ArrowUp"] = onKeyUp;
-    windowTouch.on("swipeup", onKeyUp);
   }
 
   function onLeft(listener: Listener): void {
     listeners["onKeyLeft"] = listener;
 
     events["ArrowLeft"] = onKeyLeft;
-    windowTouch.on("swipeleft", onKeyLeft);
   }
 
   function onRight(listener: Listener): void {
     listeners["onKeyRight"] = listener;
 
     events["ArrowRight"] = onKeyRight;
-    windowTouch.on("swiperight", onKeyRight);
   }
 
   function onKeyEvent(e: KeyboardEvent) {
@@ -142,6 +141,11 @@ export default function Keyboard(): Keyboard {
 
   function listen() {
     window.addEventListener("keydown", onKeyEvent);
+
+    windowTouch.on("swipedown", onKeyDown);
+    windowTouch.on("swipeup", onKeyUp);
+    windowTouch.on("swipeleft", onKeyLeft);
+    windowTouch.on("swiperight", onKeyRight);
   }
 
   function reset(): void {
@@ -151,6 +155,16 @@ export default function Keyboard(): Keyboard {
     windowTouch.off("swipeup", onKeyUp);
     windowTouch.off("swipeleft", onKeyLeft);
     windowTouch.off("swiperight", onKeyRight);
+
+    onceListener = undefined;
+
+    window.removeEventListener("keydown", onlyOnceTimeWithKeys);
+    windowTouch.off(
+      "swipeleft swipeup swipedown swiperight",
+      onlyOnceTimeWithSwipe
+    );
+
+    alreadyStarted = false;
   }
 
   const self: Keyboard = {
