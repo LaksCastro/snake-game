@@ -15,7 +15,7 @@ export default function Game(id: string): Game {
   const context = Context();
   state.set<GlobalState>("global", { ...getGlobalState(), context });
 
-  function getGlobalState() {
+  function getGlobalState(): GlobalState {
     return state.get<GlobalState>("global");
   }
   
