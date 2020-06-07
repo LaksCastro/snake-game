@@ -39,7 +39,7 @@ export default function Canvas(): Canvas {
     return data;
   }
 
-  function setCanvasDimensions() {
+  function setCanvasDimensions(): void {
     const canvas = getElement();
 
     const { width, height } = getDimensions();
@@ -48,7 +48,7 @@ export default function Canvas(): Canvas {
     canvas.height = height;
   }
 
-  function configure() {
+  function configure(): void {
     const currentState = state.get<GlobalState>("global");
 
     setCanvasDimensions();
@@ -59,7 +59,7 @@ export default function Canvas(): Canvas {
     });
   }
 
-  function update() {
+  function update(): void {
     setCanvasDimensions();
   }
 
