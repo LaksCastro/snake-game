@@ -163,8 +163,8 @@ export default function Engine(): Engine {
       if (snake.parts.indexOf(nextIndex) !== -1) {
         return gameOver();
       } else if (nextIndex === food.currentIndex) {
-        food.changeIndex();
         snake.eat(food.currentIndex);
+        food.changeIndex();
         addScore(50);
       }
 
