@@ -176,12 +176,12 @@ export default function Keyboard(): Keyboard {
   }
 
   const self: Keyboard = {
+    once,
     onDown,
     onUp,
     onLeft,
     onRight,
     listen,
-    once,
     reset,
   };
 
