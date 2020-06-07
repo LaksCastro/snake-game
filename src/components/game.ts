@@ -15,12 +15,12 @@ export default function Game(id: string): Game {
   const context = Context();
   state.set<GlobalState>("global", { ...getGlobalState(), context });
 
-  function preLoad(): void {
-    context.configure("initGame");
-  }
-
   function getGlobalState() {
     return state.get<GlobalState>("global");
+  }
+  
+  function preLoad(): void {
+    context.configure("initGame");
   }
 
   function start(): void {
