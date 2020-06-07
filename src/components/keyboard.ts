@@ -42,7 +42,7 @@ export default function Keyboard(): Keyboard {
     return codes[code];
   }
 
-  function touchEventToCode(touch: string) {
+  function touchEventToCode(touch: string): string {
     const touchs = {
       swipeleft: "ArrowLeft",
       swiperight: "ArrowRight",
@@ -53,7 +53,7 @@ export default function Keyboard(): Keyboard {
     return touchs[touch];
   }
 
-  function onlyOnceTimeWithKeys(e: KeyboardEvent) {
+  function onlyOnceTimeWithKeys(e: KeyboardEvent): void {
     if (alreadyStarted)
       return window.removeEventListener("keydown", onlyOnceTimeWithKeys);
 
@@ -70,7 +70,7 @@ export default function Keyboard(): Keyboard {
     );
   }
 
-  function onlyOnceTimeWithSwipe(e: KeyboardEvent) {
+  function onlyOnceTimeWithSwipe(e: KeyboardEvent): void {
     if (alreadyStarted) return windowTouch.off("swipe", onlyOnceTimeWithSwipe);
 
     const code = touchEventToCode(e.type);
@@ -99,19 +99,19 @@ export default function Keyboard(): Keyboard {
     );
   }
 
-  function onKeyDown() {
+  function onKeyDown(): void {
     listeners["onKeyDown"]("down");
   }
 
-  function onKeyUp() {
+  function onKeyUp(): void {
     listeners["onKeyUp"]("up");
   }
 
-  function onKeyLeft() {
+  function onKeyLeft(): void {
     listeners["onKeyLeft"]("left");
   }
 
-  function onKeyRight() {
+  function onKeyRight(): void {
     listeners["onKeyRight"]("right");
   }
 
