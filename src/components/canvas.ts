@@ -14,6 +14,15 @@ export default function Canvas(): Canvas {
 
   const { id } = state.get<GlobalState>("global");
 
+  function setCanvasDimensions(): void {
+    const canvas = getElement();
+
+    const { width, height } = getDimensions();
+
+    canvas.width = width;
+    canvas.height = height;
+  }
+  
   function getElement(): HTMLCanvasElement {
     const element = document.getElementById(id) as HTMLCanvasElement;
 
@@ -37,15 +46,6 @@ export default function Canvas(): Canvas {
     };
 
     return data;
-  }
-
-  function setCanvasDimensions(): void {
-    const canvas = getElement();
-
-    const { width, height } = getDimensions();
-
-    canvas.width = width;
-    canvas.height = height;
   }
 
   function configure(): void {
