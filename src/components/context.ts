@@ -48,7 +48,7 @@ export default function Context() {
     },
   };
 
-  function getGlobalState() {
+  function getGlobalState(): GlobalState {
     return state.get<GlobalState>("global");
   }
 
