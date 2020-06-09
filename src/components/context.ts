@@ -12,7 +12,7 @@ export type Context = {
   configure: (context: WhichContext) => void;
 };
 
-export default function Context() {
+export default function Context(): Context {
   const state = State();
   const responsivity = Responsivity();
   const canvas = Canvas();
