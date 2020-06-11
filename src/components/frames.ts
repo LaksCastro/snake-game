@@ -9,7 +9,7 @@ export default function Frames(render: () => any): Frames {
   function initialize(): void {
     if (gameOver) return;
 
-    function renderFrame() {
+    function renderFrame(): void {
       render();
       initialize();
     }
