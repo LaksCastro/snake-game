@@ -147,7 +147,7 @@ export default function Keyboard(): Keyboard {
     events[e.code]?.call();
   }
 
-  function listen() {
+  function listen(): void {
     window.addEventListener("keydown", onKeyEvent);
 
     windowTouch.on("swipedown", onKeyDown);
