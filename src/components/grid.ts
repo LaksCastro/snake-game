@@ -1,5 +1,12 @@
 import { Point } from "./point";
 
+type GridParams = {
+  columns: number;
+  rows: number;
+  pixelSize: number;
+  startPoint: Point;
+};
+
 export type Grid = {
   getLastIndex: () => number;
   getPointByIndex: (index: number) => Point;
@@ -11,12 +18,7 @@ export type Grid = {
   pixelSize: number;
 };
 
-export default function Grid(gridParams: {
-  columns: number;
-  rows: number;
-  pixelSize: number;
-  startPoint: Point;
-}): Grid {
+export default function Grid(gridParams: GridParams): Grid {
   const {
     columns,
     rows,
