@@ -1,11 +1,14 @@
 * {
   box-sizing: border-box;
+  
   margin: 0;
   padding: 0;
-  outline: none;
   border: 0;
+  outline: none;
+  
   -ms-interpolation-mode: nearest-neighbor;
   image-rendering: pixelated;
+  
   user-select: none;
   touch-action: none;
 }
