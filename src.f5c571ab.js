@@ -138,4 +138,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{}],"fUdq":[function(require,module,exports) {
 "use strict";var e=r(require("@babel/runtime-corejs2/core-js/object/define-property"));function r(e){return e&&e.__esModule?e:{default:e}}var t=function(e){return e&&e.__esModule?e:{default:e}};(0,e.default)(exports,"__esModule",{value:!0});var n=t(require("./components/game")),o=t(require("lodash.debounce"));window.addEventListener("DOMContentLoaded",function(){var e=n.default("canvas");e.preLoad(),e.start(),window.onresize=o.default(e.restart,200)});
 },{"@babel/runtime-corejs2/core-js/object/define-property":"eIqn","./components/game":"I3Xk","lodash.debounce":"PZFh"}]},{},["fUdq"], null)
-//# sourceMappingURL=/snake-game/src.f4c9b653.js.map
+//# sourceMappingURL=/snake-game/src.f5c571ab.js.map
