@@ -15,7 +15,7 @@ export default function Constants(): Constants {
     SNAKE_VELOCITY: null,
   };
 
-  function configure() {
+  function configure(): void {
     const { pixelSize } = state.get<ViewState>("view").grid;
 
     const percentToPixels = utils.interpolate([0, 100], [0, pixelSize]);
