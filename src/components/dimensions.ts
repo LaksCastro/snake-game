@@ -8,7 +8,7 @@ export type Dimensions = {
 };
 
 export default function Dimensions(): Dimensions {
-  function create(width, height) {
+  function create(width, height): DimensionSize {
     return {
       width,
       height,
