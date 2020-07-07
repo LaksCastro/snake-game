@@ -15,7 +15,7 @@ export default function Food(): Food {
 
   let lastIndex: number;
 
-  function configure() {
+  function configure(): void {
     const { grid } = state.get<ViewState>("view");
 
     lastIndex = grid.getLastIndex();
@@ -38,7 +38,7 @@ export default function Food(): Food {
     });
   }
 
-  function changeIndex() {
+  function changeIndex(): void {
     const currentState = state.get<GameState>("game");
 
     currentIndex = utils.randomInt({
