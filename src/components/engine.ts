@@ -277,14 +277,14 @@ export default function Engine(): Engine {
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
   }
 
-  function configure() {
+  function configure(): void {
     keyboard.onUp(onUp);
     keyboard.onDown(onDown);
     keyboard.onLeft(onLeft);
     keyboard.onRight(onRight);
   }
 
-  function start() {
+  function start(): void {
     renderFrame();
     keyboard.once(onPlayerInit);
   }
