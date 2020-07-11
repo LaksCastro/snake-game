@@ -153,7 +153,7 @@ export default function Engine(): Engine {
 
     const { grid } = state.get<ViewState>("view");
 
-    function moveLoop() {
+    function moveLoop(): void {
       const { direction, snake, food } = state.get<GameState>("game");
 
       const funcName = directionToGridFunc(direction);
