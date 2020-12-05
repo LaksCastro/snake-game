@@ -143,7 +143,7 @@ export default function Keyboard(): Keyboard {
     events["KeyD"] = onKeyRight;
   }
 
-  function onKeyEvent(e: KeyboardEvent) {
+  function onKeyEvent(e: KeyboardEvent): void {
     events[e.code]?.call();
   }
 
